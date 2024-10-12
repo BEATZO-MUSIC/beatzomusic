@@ -1,0 +1,1660 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #2C001E;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    cursor: default;
+}
+
+header {
+    background-color: #1A0012;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    user-select: none;
+}
+
+header h1 {
+    color: #FF5733;
+    margin: 0;
+}
+
+nav a {
+    color: #FFD700;
+    text-decoration: none;
+    margin-left: 20px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFD700;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: calc(100vh - 100px); /* Adjust based on your header and footer height */
+    padding: 20px;
+}
+
+.intro, .features {
+    background-color: rgba(136, 8, 8, 0.6);
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.intro-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    user-select: none;
+}
+
+.intro p {
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background-color: #FF8C00;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #FFA500;
+}
+
+.features h2 {
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.feature-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: calc(33.33% - 20px);
+    min-width: 250px;
+    user-select: none;
+}
+
+.feature h3 {
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .feature-list {
+        flex-direction: column;
+    }
+    
+    .feature {
+        width: 100%;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: rgba(136, 8, 8, 0.6);
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 65%;
+    transition: all 0.3s ease;
+}
+
+.testimonials:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.3);
+}
+
+.testimonials h2 {
+    color: #FF5733;
+    margin-bottom: 30px;
+}
+
+.testimonial-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.testimonial {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 250px;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(255, 87, 51, 0.2);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.testimonial .quote {
+    color: #ffffff;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.testimonial .author {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .testimonials {
+        width: 90%;
+    }
+    
+    .testimonial-list {
+        flex-direction: column;
+    }
+
+    .testimonial {
+        width: 100%;
+    }
+}
+
+/* FAQ Section */
+.faq {
+    height: auto; /* Allow height to adjust based on content */
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    overflow-y: auto;
+    max-height: 220px; /* Adjust as needed */
+    padding-right: 20px; /* Add some padding to account for hidden scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+/* WebKit and Chromium based browsers */
+.faq-list::-webkit-scrollbar {
+    display: none;
+}
+
+.faq-item {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(255, 87, 51, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.faq-item h3 {
+    color: #FFD700;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.faq-item p {
+    color: #ffffff;
+    font-size: 0.9em;
+    margin-bottom: 0;
+}
+
+/* Responsive adjustments for FAQ */
+@media (max-width: 768px) {
+    .faq-list {
+        max-height: none; /* Remove max-height on mobile */
+        padding-right: 0; /* Remove extra padding on mobile */
+    }
+}
+
+/* Footer Styles */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 40px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #FF8D1A;
+    margin: 0 10px;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: #FFC300;
+    transform: scale(1.2);
+}
+
+/* Responsive Layout for Smaller Screens */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    .feature-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature, .testimonial, .faq-item {
+        width: 90%;
+    }
+
+    .btn {
+        width: 80%;
+        text-align: center;
+    }
+
+    .intro-logo {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Responsive Image Handling */
+.logo, .intro-logo, .about-logo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* About Section Logo Adjustment */
+.about-logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+/* About Section Styles */
+.about {
+    padding: 40px 20px;
+    background: rgba(255, 87, 51, 0.1);
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.about h2 {
+    color: #FF5733;
+    margin-bottom: 20px;
+    font-size: 2em;
+    text-align: center;
+}
+
+.about p {
+    color: #FFD700;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Developers Section Styles */
+.developers {
+    background-color: rgba(136, 8, 8, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.developers h2 {
+    color: #FF5733;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.dev-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.dev-item {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.dev-item:hover {
+    transform: translateY(-5px);
+}
+
+.dev-item i {
+    font-size: 2em;
+    color: #7289DA;
+    margin-right: 15px;
+}
+
+.dev-item p {
+    color: #FFD700;
+    font-size: 1.1em;
+}
+
+/* FAQ Section Styles */
+.faq {
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.faq h2 {
+    text-align: center;
+    color: #FF5733;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.faq-item {
+    background: rgba(255, 87, 51, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.faq-item h3 {
+    color: #FFC300;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    color: #FFD700;
+}
+
+.faq-item:hover {
+    background: rgba(255, 87, 51, 0.3);
+    transform: translateY(-5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dev-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dev-item {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* About Page Styles */
+.about-intro, .developers {
+    background-color: rgba(136, 8, 8, 0.6);
+    border-radius: 10px;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 0 20px rgba(255, 87, 51, 0.5);
+    transition: all 0.3s ease;
+}
+
+.about-intro:hover, .developers:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 25px rgba(255, 87, 51, 0.8);
+}
+
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.about-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #FF5733;
+}
+
+.animated-logo {
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 87, 51, 0.7);
+    }
+    100% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 20px rgba(255, 87, 51, 0);
+    }
+}
+
+.glowing-text {
+    color: #ffffff;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #FF5733, 0 0 20px #FF5733;
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #FF5733, 0 0 40px #FF5733;
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-neon {
+    background-color: transparent;
+    color: #FF5733;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    border: 2px solid #FF5733;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btn-neon:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 87, 51, 0.4),
+        transparent
+    );
+    transition: all 0.5s;
+}
+
+.btn-neon:hover:before {
+    left: 100%;
+}
+
+.btn-neon:hover {
+    background-color: #FF5733;
+    color: #ffffff;
+    box-shadow: 0 0 20px #FF5733;
+}
+
+.btn-neon i {
+    margin-right: 8px;
+}
+
+/* Developers Section Styles */
+.developers {
+    margin-top: 40px;
+}
+
+.developers h2 {
+    color: #FF5733;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.dev-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.dev-item {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.dev-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.5);
+}
+
+.dev-item i {
+    font-size: 2em;
+    color: #7289DA;
+    margin-right: 15px;
+}
+
+.dev-item p {
+    color: #FFD700;
+    font-size: 1.1em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-neon {
+        width: 80%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .dev-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dev-item {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Ensure the background of the entire page is dark */
+body {
+    background-color: #2C001E;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 87, 51, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 87, 51, 0.1) 0%, transparent 20%);
+    background-attachment: fixed;
+}
+
+main {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+/* Add these styles if they're not already present */
+
+.intro {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.intro-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #FF5733;
+    margin-bottom: 20px;
+}
+
+.intro h1 {
+    color: #FF5733;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    color: #ffffff;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background-color: #FF5733;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+.btn:hover {
+    background-color: #FF8C00;
+    transform: translateY(-3px);
+}
+
+.features {
+    padding: 40px 20px;
+    background: rgba(255, 87, 51, 0.1);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.features h2 {
+    color: #FF5733;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.feature-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.feature {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: calc(33.33% - 20px);
+    min-width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature h3 {
+    color: #FFC300;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: #ffffff;
+}
+
+.developers {
+    background-color: rgba(255, 87, 51, 0.1);
+    border-radius: 10px;
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.developers h2 {
+    color: #FF5733;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.dev-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.dev-item {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.dev-item:hover {
+    transform: translateY(-5px);
+}
+
+.dev-item i {
+    font-size: 2em;
+    color: #7289DA;
+    margin-right: 15px;
+}
+
+.dev-item p {
+    color: #FFD700;
+    font-size: 1.1em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .buttons, .feature-list, .dev-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn, .feature, .dev-item {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 15px;
+    }
+}
+
+/* Ensure the background of the entire page is dark */
+body {
+    background-color: #2C001E;
+}
+
+main {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+/* Add these styles to your existing CSS */
+
+.logo, .intro-logo {
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover, .intro-logo:hover {
+    animation: rotate-once 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* For a continuous rotation on hover, use this instead:
+.logo:hover, .intro-logo:hover {
+    animation: rotate-continuous 2s linear infinite;
+}
+*/
+
+/* Animation for single rotation */
+@keyframes rotate-once {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animation for continuous rotation */
+@keyframes rotate-continuous {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+img {
+    -user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/* General hover effect for interactive elements */
+.btn, .feature, .logo, .intro-logo {
+    transition: all 0.3s ease;
+}
+
+.btn:hover, .feature:hover, .logo:hover, .intro-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.3);
+}
+
+/* Specific hover effects */
+
+/* Logo rotation (keeping the previous rotation effect) */
+.logo:hover, .intro-logo:hover {
+    animation: rotate-once 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@keyframes rotate-once {
+    from {
+        transform: rotate(0deg) scale(1.05);
+    }
+    to {
+        transform: rotate(360deg) scale(1.05);
+    }
+}
+
+/* Button hover effect */
+.btn:hover {
+    background-color: #FFA500;
+}
+
+/* Feature hover effect */
+.feature:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Navigation link hover effect (keeping the underline effect) */
+nav a {
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFD700;
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: #FFA500;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* General styles for box-like elements */
+.intro, .features, .feature {
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for all box-like elements */
+.intro:hover, .features:hover, .feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.3);
+}
+
+/* Specific hover effects */
+
+/* Logo hover effect */
+.logo:hover, .intro-logo:hover {
+    animation: rotate-once 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@keyframes rotate-once {
+    from {
+        transform: rotate(0deg) scale(1.05);
+    }
+    to {
+        transform: rotate(360deg) scale(1.05);
+    }
+}
+
+/* Button hover effect */
+.btn:hover {
+    background-color: #FFA500;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
+}
+
+/* Feature hover effect */
+.feature:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Navigation link hover effect (keeping the underline effect) */
+nav a {
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFD700;
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: #FFA500;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* General styles for box-like elements */
+.intro, .features, .feature {
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for all box-like elements */
+.intro:hover, .features:hover, .feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.3);
+}
+
+/* Specific styles for main sections */
+.intro, .features {
+    background-color: rgba(136, 8, 8, 0.6);
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+/* Specific styles for feature boxes */
+.feature {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+}
+
+/* Enhanced hover effect for feature boxes */
+.feature:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Retain previous hover effects for other elements */
+
+/* Logo hover effect */
+.logo:hover, .intro-logo:hover {
+    animation: rotate-once 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@keyframes rotate-once {
+    from {
+        transform: rotate(0deg) scale(1.05);
+    }
+    to {
+        transform: rotate(360deg) scale(1.05);
+    }
+}
+
+/* Button hover effect */
+.btn:hover {
+    background-color: #FFA500;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
+}
+
+/* Navigation link hover effect */
+nav a {
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFD700;
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: #FFA500;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Team section styles */
+.team {
+    background-color: rgba(136, 8, 8, 0.6);
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.team:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.3);
+}
+
+.team h2 {
+    color: #FF5733;
+    margin-bottom: 30px;
+}
+
+.team-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(50% - 10px);
+    min-width: 200px;
+    transition: all 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.3);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.team-member i {
+    font-size: 2em;
+    color: #7289DA;
+    margin-bottom: 10px;
+}
+
+.team-member h3 {
+    color: #FFD700;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .team-member {
+        width: 100%;
+    }
+}
+
+/* Testimonials section styles */
+.testimonials {
+    background-color: rgba(136, 8, 8, 0.6);
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 65%;
+    transition: all 0.3s ease;
+}
+
+.testimonials:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.3);
+}
+
+.testimonials h2 {
+    color: #FF5733;
+    margin-bottom: 30px;
+}
+
+.testimonial-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.testimonial {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 250px;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(255, 87, 51, 0.2);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.testimonial .quote {
+    color: #ffffff;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.testimonial .author {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .testimonials {
+        width: 90%;
+    }
+    
+    .testimonial-list {
+        flex-direction: column;
+    }
+
+    .testimonial {
+        width: 100%;
+    }
+}
+
+/* Shared styles for testimonials and team sections */
+.testimonials, .team {
+    background-color: rgba(136, 8, 8, 0.6);
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+}
+
+.testimonials:hover, .team:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.3);
+}
+
+.testimonials h2, .team h2 {
+    color: #FF5733;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.testimonial-list, .team-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.testimonial, .team-member {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 250px;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.testimonial:hover, .team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.3);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Testimonial specific styles */
+.testimonial .quote {
+    color: #ffffff;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.testimonial .author {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+/* Team member specific styles */
+.team-member i {
+    font-size: 2em;
+    color: #7289DA;
+    margin-bottom: 10px;
+}
+
+.team-member h3 {
+    color: #FFD700;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .testimonial-list, .team-list {
+        flex-direction: column;
+    }
+
+    .testimonial, .team-member {
+        width: 100%;
+    }
+}
+
+.about-intro {
+    width: 100%;
+    max-width: 800px; /* Adjust as needed */
+    margin: 20px auto;
+    text-align: center;
+    background-color: rgba(136, 8, 8, 0.6);
+    border-radius: 10px;
+    padding: 40px 20px;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.about-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-logo:hover {
+    animation: rotate-once 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@keyframes rotate-once {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Ensure buttons are centered */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-intro {
+        padding: 20px 10px;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+.mission, .faq {
+    background-color: rgba(136, 8, 8, 0.6);
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 65%;
+    transition: all 0.3s ease;
+}
+
+.mission:hover, .faq:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.3);
+}
+
+.mission h2, .faq h2 {
+    color: #FF5733;
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(255, 87, 51, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.faq-item h3 {
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+.feature i {
+    font-size: 2em;
+    color: #FFD700;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover i {
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .mission, .faq {
+        width: 90%;
+    }
+}
+
+/* Shared styles for all main sections */
+.about-intro, .mission, .features, .team, .faq, .testimonials {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: rgba(170, 10, 10, 0.7); /* Slightly brighter */
+    border-radius: 10px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px; /* Fixed height for all sections */
+}
+
+.about-intro:hover, .mission:hover, .features:hover, .team:hover, .faq:hover, .testimonials:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.3);
+}
+
+/* Headings for all sections */
+.about-intro h1, .mission h2, .features h2, .team h2, .faq h2, .testimonials h2 {
+    color: #FF5733;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+/* Styles for lists within sections */
+.feature-list, .team-list, .testimonial-list, .faq-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+/* Styles for individual items within lists */
+.feature, .team-member, .testimonial, .faq-item {
+    background-color: rgba(255, 255, 255, 0.15); /* Slightly brighter */
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    flex: 1;
+}
+
+.feature:hover, .team-member:hover, .testimonial:hover, .faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(255, 87, 51, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Specific styles for features */
+.feature i {
+    font-size: 1.5em;
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+.feature h3, .team-member h3, .faq-item h3 {
+    color: #FFD700;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+/* Specific styles for testimonials */
+.testimonial .quote {
+    color: #ffffff;
+    font-style: italic;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.testimonial .author {
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-intro, .mission, .features, .team, .faq, .testimonials {
+        width: 90%;
+        padding: 20px;
+        height: auto; /* Allow height to adjust on mobile */
+    }
+    
+    .feature-list, .team-list, .testimonial-list, .faq-list {
+        flex-direction: column;
+    }
+
+    .feature, .team-member, .testimonial, .faq-item {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Mission section specific styles */
+.mission {
+    height: auto; /* Allow content to determine height */
+    min-height: 150px; /* Set a minimum height */
+    max-height: 200px; /* Set a maximum height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden; /* Hide overflow content */
+}
+
+.mission h2 {
+    margin-bottom: 10px;
+}
+
+.mission p {
+    font-size: 0.9em;
+    line-height: 1.4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines of text */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+/* Responsive adjustments for mission */
+@media (max-width: 768px) {
+    .mission {
+        min-height: 120px;
+        max-height: none; /* Allow full content on mobile */
+    }
+
+    .mission p {
+        -webkit-line-clamp: none; /* Show all text on mobile */
+    }
+}
+
+/* Why Choose Beatzo section styles */
+.features {
+    background-color: rgba(136, 8, 8, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.features h2 {
+    color: #FFD700;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.feature-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.feature {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 15px;
+    width: calc(50% - 7.5px);
+    min-width: 150px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.feature:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(255, 87, 51, 0.2);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.feature i {
+    font-size: 2em;
+    color: #FFD700;
+    margin-bottom: 8px;
+}
+
+.feature h3 {
+    color: #FFD700;
+    margin-bottom: 4px;
+    font-size: 1.1em;
+}
+
+.feature p {
+    color: #ffffff;
+    font-size: 0.8em;
+    line-height: 1.3;
+    margin: 0;
+}
+
+@media (max-width: 500px) {
+    .features {
+        padding: 15px;
+    }
+    
+    .feature {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

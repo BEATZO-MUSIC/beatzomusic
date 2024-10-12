@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beatzo Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- Optional: Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="/images/bot-logo.png" alt="Beatzo Logo" class="logo">
+            <h1>Beatzo Dashboard</h1>
+        </div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+    <main>
+        <section class="intro">
+            <img src="/images/bot-logo.png" alt="Beatzo Logo" class="intro-logo">
+            <p>Beatzo is your favorite Discord music bot, bringing high-quality sound and seamless controls to your server!</p>
+            <div class="buttons">
+                <a href="https://discord.com/oauth2/authorize?client_id=<%= clientId %>&scope=bot&permissions=8" class="btn">
+                    <i class="fas fa-sign-in-alt"></i> Invite Beatzo
+                </a>
+                <a href="https://discord.gg/<%= supportServerInvite %>" class="btn">
+                    <i class="fas fa-hands-helping"></i> Support Server
+                </a>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Why Choose Beatzo</h2>
+            <div class="feature-list">
+                <div class="feature">
+                    <i class="fas fa-music"></i>
+                    <h3>High-Quality Audio</h3>
+                    <p>Experience crystal-clear sound with our advanced audio processing.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Easy to Use</h3>
+                    <p>Simple commands and intuitive interface for seamless music playback.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Users Are Saying</h2>
+            <div class="testimonial-list">
+                <div class="testimonial">
+                    <p class="quote">"Beatzo has transformed our server's music experience. The sound quality is unmatched!"</p>
+                    <p class="author">- DJMaster2000</p>
+                </div>
+                <div class="testimonial">
+                    <p class="quote">"I love how easy it is to use Beatzo. The commands are intuitive, and it never skips a beat!"</p>
+                    <p class="author">- MusicLover123</p>
+                </div>
+                <div class="testimonial">
+                    <p class="quote">"The extensive library is amazing. We always find the perfect song for every mood!"</p>
+                    <p class="author">- PartyStarter99</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>
